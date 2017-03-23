@@ -2,10 +2,12 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { UserSearchAutocomplete } from './components/home/user-search/usersearch.component'
 import { ApiService } from './shared';
 import { GithubApiService } from './services/gh-api.service'
 import { routing } from './app.routing';
@@ -17,12 +19,14 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     BrowserModule,
     HttpModule,
     FormsModule,
+    MaterialModule,
     routing
   ],
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    UserSearchAutocomplete
   ],
   providers: [
     ApiService,
