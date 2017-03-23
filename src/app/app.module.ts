@@ -4,9 +4,10 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
 import { ApiService } from './shared';
+import { GithubApiService } from './services/gh-api.service'
 import { routing } from './app.routing';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
@@ -24,7 +25,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     AboutComponent
   ],
   providers: [
-    ApiService
+    ApiService,
+    GithubApiService
   ],
   bootstrap: [AppComponent]
 })
