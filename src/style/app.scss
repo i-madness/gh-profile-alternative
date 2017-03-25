@@ -1,8 +1,44 @@
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+html {
+    height: 100vh;
+}
+
 body {
     margin: 0
 }
 
-a {
-    color: #fff;
+.footer-link {
+    color: darkmagenta;
+}
+
+md-input-container {
+    width: 40%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.user-card {
+    width: 200px;
+    display: inline-block !important;
+    margin: 5px;
+}
+
+.search-result-container {
+    margin: 10px 0;
 }

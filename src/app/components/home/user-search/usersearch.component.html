@@ -1,3 +1,11 @@
-
-<input placeholder="State" [(ngModel)]="val" (ngModelChange)="modelChg">
-<div>{{val}}</div>
+<md-input-container>
+    <input mdInput placeholder="Имя пользователя" [(ngModel)]="val" (keyup)="modelChg(event)" class="username-search-input">
+</md-input-container>
+<div class="search-result-container">
+    <md-card class="user-card" *ngFor="let opt of options">
+        <img md-card-image src="{{opt.avatar_url}}">
+        <md-card-content>
+            <md-card-title><a [href]="opt.html_url">{{ opt.login }}</a></md-card-title>
+        </md-card-content>
+    </md-card>
+</div>

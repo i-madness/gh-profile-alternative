@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-//import { GithubApiService } from '../../../services/gh-api.service'
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { GithubApiService } from '../../../services/gh-api.service'
 
 /**
  * Autocomplete-поиск пользователей GitHub
@@ -8,18 +9,19 @@ import { Component, OnInit } from '@angular/core';
     selector: 'user-search',
     templateUrl: './usersearch.component.html',
 })
-export class UserSearchAutocomplete implements OnInit {
+export class UserSearchAutocomplete {
+    autocompleteControl = new FormControl()
     val: String
-    options = ["rrr", '3342', '42'];
-    constructor(/*private githubApiService: GithubApiService,*/) { }
-
-    ngOnInit() {
-
-        console.log(this.val)
-    }
+    options: String
+    constructor(private githubApiService: GithubApiService) { }
 
     modelChg() {
-        console.log(this.val)
+        if (this.val) {
+            this.githubApiService.findUsersByQuery(this.val)
+                .then((result: any) => {
+                    this.options = result.json().items
+                })
+        }
     }
 
 }
