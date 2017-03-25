@@ -1,11 +1,11 @@
-<md-input-container>
-    <input mdInput placeholder="Имя пользователя" [(ngModel)]="val" (keyup)="modelChg(event)" class="username-search-input">
+<md-input-container style="width: 86%">
+    <input mdInput placeholder="Имя пользователя" [(ngModel)]="val" (keyup)="inputKeyUp()" class="username-search-input">
 </md-input-container>
 <div class="search-result-container">
     <md-card class="user-card" *ngFor="let opt of options">
-        <img md-card-image src="{{opt.avatar_url}}">
+        <a [href]="opt.html_url" target="_blank"><img md-card-image src="{{opt.avatar_url}}"></a>
         <md-card-content>
-            <md-card-title><a [href]="opt.html_url">{{ opt.login }}</a></md-card-title>
+            <md-card-title><a [href]="opt.html_url" target="_blank">{{ opt.login }}</a></md-card-title>
         </md-card-content>
     </md-card>
 </div>

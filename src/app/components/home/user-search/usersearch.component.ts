@@ -12,14 +12,20 @@ import { GithubApiService } from '../../../services/gh-api.service'
 export class UserSearchAutocomplete {
     autocompleteControl = new FormControl()
     val: String
-    options: String
+    options: any
+    resultsAmount = window.screen.width > 1090 ? 14 : 12
     constructor(private githubApiService: GithubApiService) { }
 
-    modelChg() {
+    inputKeyUp() {
         if (this.val) {
             this.githubApiService.findUsersByQuery(this.val)
                 .then((result: any) => {
-                    this.options = result.json().items
+                    this.options = result.json().items.slice(0, this.resultsAmount);
+                    this.options.forEach((element: any) => {
+                        if (element.login.length > 12) {
+                            element.login = element.login.slice(0, 10) + '...'
+                        }
+                    });
                 })
         }
     }
