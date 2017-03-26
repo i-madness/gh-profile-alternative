@@ -14,7 +14,6 @@ import { ProfileResponse } from '../../services/response-models'
 })
 export class HomeComponent implements OnInit {
   data = new ProfileResponse()
-  login
   constructor(private githubApiService: GithubApiService) {}
 
   ngOnInit() {
@@ -22,7 +21,6 @@ export class HomeComponent implements OnInit {
       .then((response: Response) => {
         this.data = response.json()
       });
-    console.log('Hello Home');
   }
 
 }

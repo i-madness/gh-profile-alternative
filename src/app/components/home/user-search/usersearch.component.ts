@@ -14,6 +14,7 @@ export class UserSearchAutocomplete {
     val: String
     options: any
     resultsAmount = window.screen.width > 1090 ? 14 : 12
+    
     constructor(private githubApiService: GithubApiService) { }
 
     inputKeyUp() {

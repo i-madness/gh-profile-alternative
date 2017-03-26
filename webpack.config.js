@@ -99,15 +99,6 @@ module.exports = function makeWebpackConfig() {
     });
   }
 
-  if (!isTest || !isTestWatch) {
-    // tslint support
-    config.module.rules.push({
-      test: /\.ts$/,
-      enforce: 'pre',
-      loader: 'tslint-loader'
-    });
-  }
-
   config.plugins = [
     new webpack.DefinePlugin({
       // Environment helpers
@@ -123,17 +114,8 @@ module.exports = function makeWebpackConfig() {
         root('./src') // location of your src
       ),
 
-    // Tslint configuration for webpack 2
     new webpack.LoaderOptionsPlugin({
       options: {
-        /**
-         * Apply the tslint loader as pre/postLoader
-         * Reference: https://github.com/wbuchwalter/tslint-loader
-         */
-        tslint: {
-          emitErrors: false,
-          failOnHint: false
-        },
         sassLoader: {},
         postcss: [
           autoprefixer({

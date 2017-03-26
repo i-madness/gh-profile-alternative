@@ -5,7 +5,7 @@ import { GhProfile } from './components/ghprofile/ghprofile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'profile', component: GhProfile }
+  { path: 'profile/:username', component: GhProfile }
 ];
 
 export const routing = RouterModule.forRoot(routes);
