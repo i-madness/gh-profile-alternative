@@ -6,7 +6,7 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
+import { GhProfile } from './components/ghprofile/ghprofile.component';
 import { UserSearchAutocomplete } from './components/home/user-search/usersearch.component'
 import { ApiService } from './shared';
 import { GithubApiService } from './services/gh-api.service'
@@ -25,7 +25,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
+    GhProfile,
     UserSearchAutocomplete
   ],
   providers: [
