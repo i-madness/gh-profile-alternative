@@ -3,9 +3,9 @@
 </md-input-container>
 <div class="search-result-container">
     <md-card class="user-card" *ngFor="let opt of options">
-        <a [href]="opt.html_url" target="_blank"><img md-card-image src="{{opt.avatar_url}}"></a>
+        <a [routerLink]="['profile', opt.login]"><img md-card-image src="{{opt.avatar_url}}"></a>
         <md-card-content>
-            <md-card-title><a [href]="opt.html_url" target="_blank">{{ opt.login }}</a></md-card-title>
+            <md-card-title><a [routerLink]="['profile', opt.login]">{{ opt.login }}</a></md-card-title>
         </md-card-content>
     </md-card>
 </div>

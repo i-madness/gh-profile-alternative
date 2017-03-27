@@ -1,5 +1,7 @@
-<div>
-    {{ user.login }}
-    <br />
-    {{ user.url }}
+<div class="avatar-name-container">
+    <img src="{{ user.avatar_url }}" class="profile-img"/>
+    <p><strong>{{ user.login }}</strong> ({{ user.name }})</p>
+</div>
+<div class="profile-contents">
+
 </div>
