@@ -1,7 +1,32 @@
-<div class="avatar-name-container">
-    <img src="{{ user.avatar_url }}" class="profile-img"/>
-    <p><strong>{{ user.login }}</strong> ({{ user.name }})</p>
-</div>
-<div class="profile-contents">
+<div class="profile-container" style="padding: 0">
+
+    <md-sidenav-container>
+        <md-sidenav mode="side" opened="true">
+            <div class="my-content">
+                <img src="{{ user.avatar_url }}" class="profile-img" />
+                <p><strong>{{ user.login }}</strong></p>
+                <p *ngIf="user.name"> {{ user.name }}</p>
+                <button md-button class="profile-nav-link"><i class="material-icons mrg">account_box</i> Профиль</button>
+                <button md-button class="profile-nav-link"><i class="material-icons mrg">chrome_reader_mode</i> Репозитории</button>
+                <button md-button class="profile-nav-link nav-link-last"><i class="material-icons mrg">group</i> Последователи</button>
+            </div>
+        </md-sidenav>
+
+    </md-sidenav-container>
+
+    <!--<div class="profile-sidebar">
+        <div class="avatar-name-container">
+
+            <div class="profile-links">
+                <div class="profile-nav-link"><i class="material-icons">account_box</i> Профиль</div>
+                <div class="profile-nav-link"><span style="margin-left: 10px">Репозитории</span></div>
+                <div class="profile-nav-link nav-link-last"><span style="margin-left: 10px">Последователи</span></div>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="profile-contents">
+
+    </div>
 
 </div>

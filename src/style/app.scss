@@ -14,11 +14,22 @@ html {
 }
 
 body {
-    margin: 0
+    margin: 0;
+    height: 100%;
+}
+
+main {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100%;
 }
 
 .footer-link {
     color: darkmagenta;
+}
+
+my-app {
+    height: 100%
 }
 
 md-input-container {
