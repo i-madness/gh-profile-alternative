@@ -6,17 +6,15 @@
                 <img src="{{ user.avatar_url }}" class="profile-img" />
                 <p><strong>{{ user.login }}</strong></p>
                 <p *ngIf="user.name"> {{ user.name }}</p>
-                <button md-button class="profile-nav-link"><i class="material-icons mrg">account_box</i> Профиль</button>
-                <button md-button class="profile-nav-link"><i class="material-icons mrg">chrome_reader_mode</i> Репозитории</button>
-                <button md-button class="profile-nav-link"><i class="material-icons mrg">group</i> Последователи</button>
-                <button md-button class="profile-nav-link"><i class="material-icons mrg">people_outline</i> Подписки</button>
-                <button md-button class="profile-nav-link nav-link-last"><i class="material-icons mrg">star</i> Звёзды</button>
+                <a [routerLink]="['../', user.login]" md-button class="profile-nav-link"><i class="material-icons mrg">account_box</i> Профиль</a>
+                <a [routerLink]="['repos']" md-button class="profile-nav-link"><i class="material-icons mrg">chrome_reader_mode</i> Репозитории</a>
+                <a [routerLink]="['followers']" md-button class="profile-nav-link"><i class="material-icons mrg">group</i> Последователи</a>
+                <a [routerLink]="['following']" md-button class="profile-nav-link"><i class="material-icons mrg">people_outline</i> Подписки</a>
+                <a [routerLink]="['stars']" md-button class="profile-nav-link nav-link-last"><i class="material-icons mrg">star</i> Звёзды</a>
             </div>
         </md-sidenav>
+        <div class="main-conentns">
+            <router-outlet></router-outlet>
+        </div>
     </md-sidenav-container>
-
-    <div class="profile-contents">
-
-    </div>
-
 </div>
