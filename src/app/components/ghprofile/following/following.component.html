@@ -1,1 +1,7 @@
-Following! (Not followers!!11)
+<h1>Подписки</h1>
+<md-card class="user-card" *ngFor="let sub of subs">
+    <a href="{{sub.html_url}}"><img md-card-image src="{{sub.avatar_url}}" /></a>
+    <md-card-content>
+        <md-card-title><a href="{{sub.html_url}}">{{ sub.login }}</a></md-card-title>
+    </md-card-content>
+</md-card>

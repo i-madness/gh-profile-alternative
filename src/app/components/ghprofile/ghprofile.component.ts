@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import { GithubApiService } from '../../services/gh-api.service'
-import { ProfileResponse } from '../../services/response-models'
+import { GithubApiService } from '../../services/gh-api.service';
+import { ProfileResponse } from '../../services/response-models';
 import 'rxjs/add/operator/switchMap';
 
 /**

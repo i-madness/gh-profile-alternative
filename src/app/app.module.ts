@@ -12,7 +12,6 @@ import { StarsContainer } from './components/ghprofile/stars/stars.component';
 import { FollowersContainer } from './components/ghprofile/followers/followers.component';
 import { FollowingContainer } from './components/ghprofile/following/following.component';
 import { UserSearchAutocomplete } from './components/home/user-search/usersearch.component'
-import { ApiService } from './shared';
 import { GithubApiService } from './services/gh-api.service'
 import { routing } from './app.routing';
 
@@ -37,7 +36,6 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     UserSearchAutocomplete
   ],
   providers: [
-    ApiService,
     GithubApiService
   ],
   bootstrap: [AppComponent]

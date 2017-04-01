@@ -22,4 +22,20 @@ export class GithubApiService {
     findUsersByQuery(query: String): Promise<any> {
         return this.http.get(`https://api.github.com/search/users?q=${query}`).toPromise();
     }
+
+    /**
+     * Запрос на получение последователей (followers) пользователя
+     * @param userName имя пользователя
+     */
+    fetchUserFollowers(userName: String): Promise<any> {
+        return this.http.get(`https://api.github.com/users/${userName}/followers`).toPromise();
+    }
+
+    /**
+     * Запрос на получение подписок (following) пользователя
+     * @param userName имя пользователя
+     */
+    fetchUserSubscriprions(userName: String): Promise<any> {
+        return this.http.get(`https://api.github.com/users/${userName}/following`).toPromise();
+    }
 }

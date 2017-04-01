@@ -1,1 +1,8 @@
-Stub for Followers :]
+<h1>Последователи</h1>
+
+<md-card class="user-card" *ngFor="let follower of followers">
+    <a href="{{follower.html_url}}"><img md-card-image src="{{follower.avatar_url}}"></a>
+    <md-card-content>
+        <md-card-title><a href="{{follower.html_url}}">{{ follower.login }}</a></md-card-title>
+    </md-card-content>
+</md-card>
