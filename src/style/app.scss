@@ -58,3 +58,18 @@ footer {
 .search-result-container {
     margin: 10px 0;
 }
+
+/*>========================< ICONS >========================<*/
+.prlang {
+    background-size: cover;
+    width: 30pt;
+    height: 30pt;
+}
+
+.rust-icon {
+    background-image: url('../public/img/prlang-icons/rust.png');
+}
+
+.lua-icon {
+    background-image: url('../public/img/prlang-icons/lua.png');
+}
