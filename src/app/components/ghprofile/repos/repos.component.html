@@ -1,3 +1,10 @@
-<div>
-    hey there
-</div>
+<md-card class="repo-card" *ngFor="let repo of repositories">
+    <md-card-title style="vertical-align: middle">
+        {{ repo.name }} 
+        <i *ngIf="repo.langIcon" class="{{ repo.langIcon }}" style="font-size: 30pt; float: right"></i></md-card-title>
+        <span *ngIf="!repo.langIcon">{{ repo.language }}</span>
+<!--<a href="{{sub.html_url}}"><img md-card-image src="{{sub.avatar_url}}" /></a>
+    <md-card-content>
+        <md-card-title><a href="{{sub.html_url}}">{{ sub.login }}</a></md-card-title>
+    </md-card-content>-->
+</md-card>

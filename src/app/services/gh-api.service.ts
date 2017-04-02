@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
  */
 @Injectable()
 export class GithubApiService {
-    constructor (private http: Http) {}
+    constructor(private http: Http) { }
 
     /**
      * Запрос на получение данных заданного пользователя
@@ -37,5 +37,21 @@ export class GithubApiService {
      */
     fetchUserSubscriprions(userName: String): Promise<any> {
         return this.http.get(`https://api.github.com/users/${userName}/following`).toPromise();
+    }
+
+    /**
+     * Запрос на получение репозиториев пользователя
+     * @param userName имя пользователя
+     */
+    fetchUsersRepositories(userName: String): Promise<any> {
+        return this.http.get(`https://api.github.com/users/${userName}/repos`).toPromise();
+    }
+
+    /**
+     * Запрос на получение звёзд пользователя
+     * @param userName имя пользователя
+     */
+    fetchUsersStars(userName: String): Promise<any> {
+        return this.http.get(`https://api.github.com/users/${userName}/starred`).toPromise();
     }
 }

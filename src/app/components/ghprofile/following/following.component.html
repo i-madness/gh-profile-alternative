@@ -1,4 +1,5 @@
 <h1>Подписки</h1>
+<p *ngIf="!followers || !followers.length">Нет последователей</p>
 <md-card class="user-card" *ngFor="let sub of subs">
     <a href="{{sub.html_url}}"><img md-card-image src="{{sub.avatar_url}}" /></a>
     <md-card-content>
