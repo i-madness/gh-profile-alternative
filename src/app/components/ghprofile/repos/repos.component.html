@@ -1,7 +1,11 @@
+<h1>Репозитории</h1>
 <md-card class="repo-card" *ngFor="let repo of repositories">
     <md-card-title style="vertical-align: middle">
-        {{ repo.name }} 
-        <i *ngIf="repo.langIcon" class="{{ repo.langIcon }}" style="font-size: 30pt; float: right"></i>
+        <a target="_blank" href="{{ repo.html_url }}">{{ repo.name }}</a> 
+        <i *ngIf="repo.langIcon" mdTooltip="{{ repo.language }}" mdTooltipPosition="left" class="{{ repo.langIcon }}" style="font-size: 30pt; float: right"></i>
         <span *ngIf="!repo.langIcon" style="float: right">{{ repo.language }}</span>
     </md-card-title>
+    <md-card-content>
+        {{ repo.description }}
+    </md-card-content>
 </md-card>

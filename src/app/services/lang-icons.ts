@@ -23,6 +23,7 @@ export const LANGUAGE_ICONS = {
     'Ruby': 'devicon-ruby-plain-wordmark',
     'Rust': 'prlang rust-icon',
     'Scala': '',
+    'Shell': 'prlang shell-icon',
     'Swift': '',
     'TeX': '',
     'TypeScript': 'devicon-typescript-plain',
