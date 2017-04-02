@@ -14,7 +14,6 @@ import { FollowingContainer } from './components/ghprofile/following/following.c
 import { UserSearchAutocomplete } from './components/home/user-search/usersearch.component'
 import { GithubApiService } from './services/gh-api.service'
 import { routing } from './app.routing';
-
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
 @NgModule({
@@ -23,7 +22,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     HttpModule,
     FormsModule,
     MaterialModule,
-    routing
+    routing,
   ],
   declarations: [
     AppComponent,
