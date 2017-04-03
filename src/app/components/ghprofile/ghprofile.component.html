@@ -14,6 +14,10 @@
             </div>
         </md-sidenav>
         <div class="main-conentns">
+            <div class="overview-pane" *ngIf="true">
+                <h3>Вклад пользователя</h3>
+                <img id="contributions-chart" src="{{ 'http://ghchart.rshah.org/673ab7/' + user.login }}" />
+            </div>
             <router-outlet></router-outlet>
         </div>
     </md-sidenav-container>

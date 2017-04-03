@@ -14,13 +14,17 @@ import 'rxjs/add/operator/switchMap';
     styleUrls: ['./ghprofile.component.scss']
 })
 export class GhProfile implements OnInit {
-    user = new ProfileResponse()
+    user = new ProfileResponse();
+    isIndexRoute: Boolean;
 
     constructor(
         private githubApiService: GithubApiService,
         private route: ActivatedRoute,
         private location: Location,
-    ) { }
+    ) { 
+        console.log(route)
+        window['wut'] = route;
+    }
 
     ngOnInit() {
         this.route.params

@@ -20,10 +20,12 @@ export class StarsContainer implements OnInit {
                     this.stars = response.json();
                     this.stars.forEach(repo => {
                         repo["langIcon"] = LANGUAGE_ICONS[repo.language]
-                        let emojis: Array<String> = repo.description.match(/\:[a-z_]*\:/ig);
-                        emojis && emojis.forEach(emoji => {
-                            repo.description = repo.description.replace(emoji, ``)
-                        })
+                        if (repo.description) {
+                            let emojis: Array<String> = repo.description.match(/\:[a-z_]*\:/ig);
+                            emojis && emojis.forEach(emoji => {
+                                repo.description = repo.description.replace(emoji, ``)
+                            })
+                        }
                     });
                 })
         });
