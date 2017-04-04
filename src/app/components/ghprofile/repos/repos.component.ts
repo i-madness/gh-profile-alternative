@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GithubApiService } from '../../../services/gh-api.service'
 import { LANGUAGE_ICONS } from '../../../services/lang-icons'
+import ApplicationUtils from '../../../services/utils'
 
 @Component({
     selector: 'repos',
@@ -21,10 +22,7 @@ export class RepositoryContainer implements OnInit {
                     this.repositories.forEach(repo => {
                         repo["langIcon"] = LANGUAGE_ICONS[repo.language]
                         if (repo.description) {
-                            let emojis: Array<String> = repo.description.match(/\:[a-z_]*\:/ig);
-                            emojis && emojis.forEach(emoji => {
-                                repo.description = repo.description.replace(emoji, ``)
-                            })
+                            repo.description = ApplicationUtils.removeEmojiSigns(repo.description)
                         }
                     });
                 })

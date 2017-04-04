@@ -21,10 +21,7 @@ export class GhProfile implements OnInit {
         private githubApiService: GithubApiService,
         private route: ActivatedRoute,
         private location: Location,
-    ) { 
-        console.log(route)
-        window['wut'] = route;
-    }
+    ) { }
 
     ngOnInit() {
         this.route.params

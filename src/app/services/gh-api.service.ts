@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import * as moment from 'moment'
+
 /**
  * REST-клиент для GitHub API
  */
@@ -53,5 +55,19 @@ export class GithubApiService {
      */
     fetchUsersStars(userName: String): Promise<any> {
         return this.http.get(`https://api.github.com/users/${userName}/starred`).toPromise();
+    }
+
+    /**
+     * Запрос на получение коммитов пользователя
+     * @param userName имя пользователя
+     */
+    fetchCommits(userName: String): Promise<any> {
+        let beginDate = moment().startOf('month').toISOString()
+        return this.fetchUsersRepositories(userName)
+            .then(repos => {
+                repos = repos.json();
+                let commitPromises = repos.map(repo => this.http.get(`https://api.github.com/repos/${userName}/${repo.name}/commits?since=${beginDate}`).toPromise());
+                return Promise.all([Promise.resolve(repos), ...commitPromises]);
+            })
     }
 }
