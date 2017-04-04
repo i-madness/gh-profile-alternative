@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { GithubApiService } from '../../../services/gh-api.service'
+import { GithubApiService } from '../../../services/gh-api.service';
+import { debounce } from 'lodash';
 
 /**
  * Autocomplete-поиск пользователей GitHub
@@ -14,8 +15,9 @@ export class UserSearchAutocomplete {
     val: String
     options: any
     resultsAmount = window.screen.width > 1090 ? 14 : 12
+    delayedKeyUp = debounce(this.inputKeyUp, 400)
     
-    constructor(private githubApiService: GithubApiService) { }
+    constructor(private githubApiService: GithubApiService) { }    
 
     inputKeyUp() {
         if (this.val) {

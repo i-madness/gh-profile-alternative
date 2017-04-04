@@ -1,5 +1,5 @@
 <md-input-container style="width: 86%">
-    <input mdInput placeholder="Имя пользователя" [(ngModel)]="val" (keyup)="inputKeyUp()" class="username-search-input">
+    <input mdInput placeholder="Имя пользователя" [(ngModel)]="val" (keyup)="delayedKeyUp()" class="username-search-input">
 </md-input-container>
 <div class="search-result-container">
     <md-card class="user-card" *ngFor="let opt of options">
