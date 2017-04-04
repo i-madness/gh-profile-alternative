@@ -6,6 +6,7 @@ import { RepositoryContainer } from './components/ghprofile/repos/repos.componen
 import { StarsContainer } from './components/ghprofile/stars/stars.component';
 import { FollowersContainer } from './components/ghprofile/followers/followers.component';
 import { FollowingContainer } from './components/ghprofile/following/following.component';
+import { OverviewContainer } from './components/ghprofile/overview/overview.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,6 +14,10 @@ const routes: Routes = [
     path: 'profile/:username', 
     component: GhProfile,
     children: [
+      {
+        path: '',
+        component: OverviewContainer
+      },
       {
         path: 'repos',
         component: RepositoryContainer

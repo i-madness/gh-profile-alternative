@@ -10,6 +10,7 @@ import { GhProfile } from './components/ghprofile/ghprofile.component';
 import { RepositoryContainer } from './components/ghprofile/repos/repos.component';
 import { StarsContainer } from './components/ghprofile/stars/stars.component';
 import { FollowersContainer } from './components/ghprofile/followers/followers.component';
+import { OverviewContainer } from './components/ghprofile/overview/overview.component';
 import { FollowingContainer } from './components/ghprofile/following/following.component';
 import { UserSearchAutocomplete } from './components/home/user-search/usersearch.component'
 import { GithubApiService } from './services/gh-api.service'
@@ -32,6 +33,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     StarsContainer,
     FollowersContainer,
     FollowingContainer,
+    OverviewContainer,
     UserSearchAutocomplete
   ],
   providers: [
