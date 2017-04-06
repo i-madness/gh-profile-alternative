@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { GithubApiService } from '../../../services/gh-api.service';
+import { GithubApiService } from '../../services/gh-api.service';
 import { debounce } from 'lodash';
 
 /**
@@ -8,7 +8,8 @@ import { debounce } from 'lodash';
  */
 @Component({
     selector: 'user-search',
-    templateUrl: './usersearch.component.html',
+    templateUrl: './usersearch.component.html', 
+    styleUrls: ['./usersearch.component.scss']
 })
 export class UserSearchAutocomplete {
     autocompleteControl = new FormControl()

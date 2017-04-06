@@ -62,7 +62,7 @@ export class GithubApiService {
      * @param userName имя пользователя
      */
     fetchCommits(userName: String): Promise<any> {
-        let beginDate = moment().startOf('month').toISOString()
+        let beginDate = moment().startOf('month').toISOString(); // пока что по умолчанию извлекаются только коммиты за этот месяц, при желании можно будет расширить
         return this.fetchUsersRepositories(userName)
             .then(repos => {
                 repos = repos.json();

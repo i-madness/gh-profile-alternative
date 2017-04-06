@@ -1,7 +1,7 @@
 <h3>Вклад пользователя</h3>
 <img id="contributions-chart" src="{{ 'http://ghchart.rshah.org/673ab7/' + username }}" />
 
-<h3>Коммиты {{ username }} за {{ curMonth }}</h3>
+<h3 *ngIf="commits && commits.length">Коммиты {{ username }} за {{ curMonth }}</h3>
 <md-card class="repo-card" *ngFor="let cmt of commits">
     <md-card-title style="vertical-align: middle">
         <a target="_blank" href="{{ cmt.html_url }}">{{ cmt.repo.name }}, {{ cmt.timestamp }}</a>
@@ -12,3 +12,4 @@
         {{ cmt.commit.message }}
     </md-card-content>
 </md-card>
+<h3 *ngIf="commits && !commits.length" style="font-style: italic">Не найдено коммитов или все коммиты сделаны в приватные репозитории</h3>
